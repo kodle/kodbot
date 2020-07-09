@@ -17,7 +17,7 @@ let points = JSON.parse(fs.readFileSync("./points.json", "utf-8"));
 const prefix = "$";
 
 client.on("ready", () => {
-  client.user.setPresence({ game: { name: "discord.gg/AHe3BWd", type: 0 } });
+  client.user.setPresence({ game: { name: "aaaaaaaaa", type: 0 } });
 
   /* let embed = new Discord.RichEmbed()
   .setColor("#39FF14")
@@ -109,34 +109,6 @@ client.on("message", message => {
     console.log(log + "info");
   }
 
-  if (message.content.startsWith(prefix + "meerkat")) {
-    const embed = new Discord.MessageEmbed()
-      .setColor(0x1abc9c)
-      .setTitle("Meerkat")
-      .addField("Projet", "https://github.com/orgs/Lunarly/projects/1")
-      .addField("GitHub", "https://github.com/Lunarly/meerkat");
-    message.channel.send(embed);
-    console.log(log + "meerkat");
-  }
-
-  if (message.content.startsWith(prefix + "cc")) {
-    const embed = new Discord.MessageEmbed()
-      .setColor(0x1abc9c)
-      .setTitle("Crowd Control")
-      .addField("Projet", "https://github.com/orgs/Lunarly/projects/2")
-      .addField("GitHub", "https://github.com/Lunarly/crowdcontrol")
-      .addField(
-        "Docs Google (Pre-Sequel)",
-        "https://docs.google.com/document/d/1y9ohgDki2pJkUyG3J6uvwd3ebwOAXgxQGJ1GL2XUR6I/edit"
-      )
-      .addField(
-        "Docs Google (2)",
-        "https://docs.google.com/document/d/1tmK7vXW2kYjjMjOQMVqJNYsuHYSB37Kx3W26_t9gjcE/edit"
-      );
-    message.channel.send(embed);
-    console.log(log + "cc");
-  }
-
   if (message.content.startsWith(prefix + "lenny")) {
     message.channel.send("( ͡° ͜ʖ ͡°)");
     console.log(log + "( ͡° ͜ʖ ͡°)");
@@ -166,13 +138,6 @@ client.on("message", message => {
     }
   }
 
-  if (message.content.startsWith(prefix + "playlist")) {
-    message.channel.send(
-      "Voilà une superbe playlist ! \nhttps://open.spotify.com/playlist/2qlzp9wOlUaS1FaetH8Yz2?si=3djR3F5SSu2Jz7GXTJP6bA"
-    );
-    console.log(log + "playlist");
-  }
-
   if (message.content.startsWith(prefix + "dice")) {
     message.channel
       .send("Le dé roule...")
@@ -180,17 +145,10 @@ client.on("message", message => {
     console.log(log + `dice ${rand()}`);
   }
 
-  if (message.content.startsWith(prefix + "ping")) {
-    message.channel.send(
-      new Date().getTime() - message.createdTimestamp + " ms"
-    );
-    console.log(log + "ping");
-  }
-
   // ---------------- ADMINISTRATION ---------------------
 
   if (message.content.startsWith(prefix + "shutdown")) {
-    if (message.member.roles.some(r => ["Admin"].includes(r.name))) {
+    if (message.member.roles.some(r => ["🤹 Gourou"].includes(r.name))) {
       let embed = new Discord.RichEmbed()
         .setColor("#ff1d00")
         .setTitle("Le bot est éteint.");
@@ -203,7 +161,7 @@ client.on("message", message => {
   }
 
   if (command === "say") {
-    if (message.member.roles.some(r => ["Admin"].includes(r.name))) {
+    if (message.member.roles.some(r => ["🤹 Gourou"].includes(r.name))) {
       let text = args.slice(0).join(" ");
       message.delete();
       message.channel.send(text);
@@ -212,7 +170,7 @@ client.on("message", message => {
   }
 
   if (message.content.startsWith(prefix + "kick")) {
-    if (message.member.roles.some(r => ["Admin"].includes(r.name))) {
+    if (message.member.roles.some(r => ["🤹 Gourou"].includes(r.name))) {
       if (message.mentions.members.size === 0)
         return message.reply("merci d'entrer un utilisateur !");
       member
@@ -234,7 +192,7 @@ client.on("message", message => {
 
   if (message.content.startsWith(prefix + "mute")) {
     if (
-      message.member.roles.some(r => ["Admin", "N.E.P.T.R"].includes(r.name))
+      message.member.roles.some(r => ["🤹 Gourou", "kodbot"].includes(r.name))
     ) {
       let role = message.guild.roles.find("name", "Mute");
       if (role) return message.reply("merci d'entrer un utilisateur !");
@@ -245,7 +203,7 @@ client.on("message", message => {
 
   if (message.content.startsWith(prefix + "demute")) {
     if (
-      message.member.roles.some(r => ["Admin", "N.E.P.T.R"].includes(r.name))
+      message.member.roles.some(r => ["🤹 Gourou", "kodbot"].includes(r.name))
     ) {
       let role = message.guild.roles.find("name", "Mute");
       if (role) return message.reply("merci d'entrer un utilisateur !");
