@@ -79,5 +79,5 @@ client.on("message", message => {
 module.exports.help = {
   name: "dice"
 };
-
+};
 client.login(token);
