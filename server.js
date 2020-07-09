@@ -14,22 +14,17 @@ const time = moment().format("Do MMMM YYYY, h:mm:ss");
 const token = process.env.TOKEN;
 
 let points = JSON.parse(fs.readFileSync("./points.json", "utf-8"));
-const prefix = "$";
+const prefix = ",";
 
 client.on("ready", () => {
-  client.user.setPresence({ game: { name: "aaaaaaaaa", type: 0 } });
+  client.user.setPresence({ game: { name: 'aaaaaaaaaaa', type: 0 } });
 
-  /* let embed = new Discord.RichEmbed()
-  .setColor("#39FF14")
-  .setTitle("Le bot est allumé.")
-  var channel = client.channels.get('329322280201224203');
-  channel.send(embed); */
 
   console.log(`===========================`);
   console.log(`Connecté en tant que ${client.user.tag}`);
   console.log("Votre token: " + token);
   console.log("");
-  console.log("Version de Node: " + process.version); 
+  console.log("Version de Node: " + process.version);
   console.log("Version de DiscordJS: " + Discord.version);
   console.log(`===========================`);
 });
@@ -45,23 +40,6 @@ client.on("message", message => {
   var snekfetch = require("snekfetch");
 
   // -------- COMMANDES -------
-
-  if (message.content.startsWith(prefix + "link")) {
-    if (message.member.roles.some(r => ["Admin"].includes(r.name))) {
-      const embed = new Discord.MessageEmbed()
-        .setColor(0x1abc9c)
-        .setTitle("Bienvenue !")
-        .addField("Lien du GitHub", "https://github.com/Lunarly")
-        .addField("Lien du site", "https://lunarly.github.io/")
-        .addField(
-          "Lien des projets",
-          "https://github.com/orgs/Lunarly/projects/"
-        )
-        .addField("Lien d'invitation", "https://discord.gg/AHe3BWd");
-      message.channel.send(embed);
-      console.log(log + "link");
-    }
-  }
 
   if (message.content.startsWith(prefix + "rules")) {
     const embed = new Discord.MessageEmbed()
@@ -79,22 +57,12 @@ client.on("message", message => {
     const embed = new Discord.MessageEmbed()
       .setColor(0x1abc9c)
       .setTitle("Listes des commandes")
-      .addField("$rules", "Envoie les règles")
-      .addField("$link", "Envoie les liens du serveur")
-      .addField("$info", "Envoie quelques infos sur le bot")
-      .addField("$playlist", "Envoie une superbe playlist Spotify")
-      .addField("$level", "Envoie votre niveau et vos points")
-      .addField(
-        "$avatar [utilisateur]",
-        "Envoie l'image de profile de l'utilisateur"
-      )
-      .addField("$cat", "Envoie une image aléatoire de chat")
-      .addField("$dice", "Fait rouler un dé et donne un nombre entre 1 et 6")
-      .addField("$ping", "Tester la latence du bot")
-      .addField("$lenny", "( ͡° ͜ʖ ͡°)")
-      .addField("$say", "Faire parler le bot avec vos mots (Admin seulement)")
-      .addField("$kick", "Expulser un membre (Admin seulement)")
-      .addField("$mute/$demute", "Mute un membre (Admin seulement)");
+      .addField(",rules", "Envoie les règles")
+      .addField(",info", "Envoie quelques infos sur le bot")
+      .addField(",level", "Envoie votre niveau et vos points")
+      .addField(",cat", "Envoie une image aléatoire de chat")
+      .addField(",dice", "Fait rouler un dé et donne un nombre entre 1 et 6")
+      .addField(",lenny", "( ͡° ͜ʖ ͡°)")
     message.channel.send(embed);
     console.log(log + "help");
   }
@@ -103,8 +71,8 @@ client.on("message", message => {
     const embed = new Discord.MessageEmbed()
       .setColor(0x1abc9c)
       .setTitle("À propos")
-      .addField("Créateur", "@kodle#1857")
-      .addField("Lien du GitHub", "https://github.com/kodle/neptr");
+      .addField("Dev", "@kodle#1857")
+      .addField("GitHub", "https://github.com/kodle/kodbot");
     message.channel.send(embed);
     console.log(log + "info");
   }
@@ -143,73 +111,6 @@ client.on("message", message => {
       .send("Le dé roule...")
       .then(message => message.edit(`Le numéro du dé est ${rand()}`));
     console.log(log + `dice ${rand()}`);
-  }
-
-  // ---------------- ADMINISTRATION ---------------------
-
-  if (message.content.startsWith(prefix + "shutdown")) {
-    if (message.member.roles.some(r => ["🤹 Gourou"].includes(r.name))) {
-      let embed = new Discord.RichEmbed()
-        .setColor("#ff1d00")
-        .setTitle("Le bot est éteint.");
-      message.channel.send(embed); // send the embed
-      // unload all commands before shutting down
-      var interval = setInterval(function() {
-        process.exit(1);
-      }, 1 * 250);
-    }
-  }
-
-  if (command === "say") {
-    if (message.member.roles.some(r => ["🤹 Gourou"].includes(r.name))) {
-      let text = args.slice(0).join(" ");
-      message.delete();
-      message.channel.send(text);
-      console.log(log + "say");
-    }
-  }
-
-  if (message.content.startsWith(prefix + "kick")) {
-    if (message.member.roles.some(r => ["🤹 Gourou"].includes(r.name))) {
-      if (message.mentions.members.size === 0)
-        return message.reply("merci d'entrer un utilisateur !");
-      member
-        .kick()
-        .then(member => {
-          // Successmessage
-          message.channel.send(
-            ":wave: " + member.displayName + " à été kick du serveur ! "
-          );
-          console.log(log + "kick @" + member.displayName);
-        })
-        .catch(() => {
-          // Failmessage
-          message.reply("Accès réfusé, permission pas assez haute.");
-          console.log(log + "kick @" + member.displayName + "(Accès refusé)");
-        });
-    }
-  }
-
-  if (message.content.startsWith(prefix + "mute")) {
-    if (
-      message.member.roles.some(r => ["🤹 Gourou", "kodbot"].includes(r.name))
-    ) {
-      let role = message.guild.roles.find("name", "Mute");
-      if (role) return message.reply("merci d'entrer un utilisateur !");
-      member.addRole(role);
-      console.log(log + "mute @" + member.displayName);
-    }
-  }
-
-  if (message.content.startsWith(prefix + "demute")) {
-    if (
-      message.member.roles.some(r => ["🤹 Gourou", "kodbot"].includes(r.name))
-    ) {
-      let role = message.guild.roles.find("name", "Mute");
-      if (role) return message.reply("merci d'entrer un utilisateur !");
-      member.removeRole(role);
-      console.log(log + "demute @" + member.displayName);
-    }
   }
 
   if (!message.content.startsWith(prefix)) return;
