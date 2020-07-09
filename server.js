@@ -29,7 +29,7 @@ client.on("ready", () => {
   console.log(`Connecté en tant que ${client.user.tag}`);
   console.log("Votre token: " + token);
   console.log("");
-  console.log("Version de Node: " + process.version);
+  console.log("Version de Node: " + process.version); 
   console.log("Version de DiscordJS: " + Discord.version);
   console.log(`===========================`);
 });
