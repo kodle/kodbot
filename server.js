@@ -13,7 +13,6 @@ moment.locale();
 const time = moment().format("Do MMMM YYYY, h:mm:ss");
 const token = process.env.TOKEN;
 
-let points = JSON.parse(fs.readFileSync("./points.json", "utf-8"));
 const prefix = ",";
 
 client.on("ready", () => {
@@ -58,8 +57,6 @@ client.on("message", message => {
       .setColor(0x1abc9c)
       .setTitle("Listes des commandes")
       .addField(",rules", "Envoie les règles")
-      .addField(",info", "Envoie quelques infos sur le bot")
-      .addField(",level", "Envoie votre niveau et vos points")
       .addField(",cat", "Envoie une image aléatoire de chat")
       .addField(",dice", "Fait rouler un dé et donne un nombre entre 1 et 6")
       .addField(",lenny", "( ͡° ͜ʖ ͡°)")
@@ -112,34 +109,6 @@ client.on("message", message => {
       .then(message => message.edit(`Le numéro du dé est ${rand()}`));
     console.log(log + `dice ${rand()}`);
   }
-
-  if (!message.content.startsWith(prefix)) return;
-  if (message.author.bot) return;
-
-  if (!points[message.author.id])
-    points[message.author.id] = {
-      points: 0,
-      level: 0
-    };
-  let userData = points[message.author.id];
-  userData.points++;
-
-  let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
-  if (curLevel > userData.level) {
-    // Level up!
-    userData.level = curLevel;
-    message.reply(`Tu passes au level **${curLevel}**!`);
-  }
-
-  if (message.content.startsWith(prefix + "level")) {
-    message.reply(
-      `Tu es level ${userData.level}, avec ${userData.points} points.`
-    );
-  }
-  fs.writeFile("./points.json", JSON.stringify(points), err => {
-    if (err) console.error(err);
-  });
-});
 
 client.on("guildMemberAdd", member => {
   member.guild.channels
