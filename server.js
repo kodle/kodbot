@@ -1,3 +1,6 @@
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  
 const Discord = require("discord.js");
 const newUsers = new Discord.Collection();
 const client = new Discord.Client();
@@ -31,6 +34,7 @@ client.on("ready", () => {
   console.log("");
   console.log("Version de Node: " + process.version); 
   console.log("Version de DiscordJS: " + Discord.version);
+  console.log(`Our app is running on port ${ PORT }`);
   console.log(`===========================`);
 });
 
@@ -297,3 +301,4 @@ module.exports.help = {
 };
 
 client.login(token);
+});
