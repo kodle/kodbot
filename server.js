@@ -43,12 +43,12 @@ client.on("message", message => {
       .addField(",dice", "Fait rouler un dé et donne un nombre entre 1 et 6")
       .addField(",lenny", "( ͡° ͜ʖ ͡°)")
     message.channel.send(embed);
-    console.log(log + "help");
+    console.log("help");
   }
 
   if (message.content.startsWith(prefix + "lenny")) {
     message.channel.send("( ͡° ͜ʖ ͡°)");
-    console.log(log + "( ͡° ͜ʖ ͡°)");
+    console.log("( ͡° ͜ʖ ͡°)");
   }
 
   if (message.content.startsWith(prefix + "cat")) {
@@ -62,7 +62,7 @@ client.on("message", message => {
             }
           ]
         });
-        console.log(log + "cat");
+        console.log("cat");
       });
     } catch (e) {
       console.log("Erreur de $cat");
@@ -73,7 +73,7 @@ client.on("message", message => {
     message.channel
       .send("Le dé roule...")
       .then(message => message.edit(`Le numéro du dé est ${rand()}`));
-    console.log(log + `dice ${rand()}`);
+    console.log(`dice ${rand()}`);
   }
 
 module.exports.help = {
