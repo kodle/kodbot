@@ -297,4 +297,3 @@ module.exports.help = {
 };
 
 client.login(token);
-});
