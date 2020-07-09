@@ -12,6 +12,7 @@ const moment = require("moment");
 moment.locale();
 const time = moment().format("Do MMMM YYYY, h:mm:ss");
 const token = "NzMwODI2ODU2NDEyMjE3Mzc2.Xwdueg.MdHR0EsIIQiGOHZJOi-d6uqMjG0";
+const PORT = 3000;
 
 let points = JSON.parse(fs.readFileSync("./points.json", "utf-8"));
 const prefix = "$";
