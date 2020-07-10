@@ -82,6 +82,15 @@ client.on('message', message => {
     message.channel.send("( ͡° ͜ʖ ͡°)");
     console.log("lenny");
   }
+  
+  if(message.content.startsWith(prefix + "say"){
+    if(message.member.roles.some(r=>["kd"].includes(r.name)) ) {
+    let text = args.slice(0).join(" ");
+    message.delete();
+    message.channel.send(text);
+    console.log("say")
+    }
+  }
 
 });
 
