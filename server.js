@@ -18,6 +18,9 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+  
+  const args = message.content.slice(prefix.length).split(' ');
+  
   if (message.content === 'ping') {
     message.reply('pong!');
   }
