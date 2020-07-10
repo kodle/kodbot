@@ -94,10 +94,6 @@ client.on('message', message => {
       message.channel.send(text);
       console.log("say")
     }
-  } else {
-    console.log("tentative de say")
-    message.reply("nullos")
-  }
 
 });
 
