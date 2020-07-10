@@ -92,7 +92,7 @@ client.on('message', message => {
     message.delete();
     message.channel.send(text);
     console.log("say")
-  } catch {
+  } catch (e) {
     message.reply("tg"); 
   }
 
