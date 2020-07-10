@@ -27,6 +27,7 @@ client.on('message', message => {
       .setColor(0x1abc9c)
       .setTitle("Listes des commandes")
       .addField(",sad", "Afficher votre tristesse")
+      .addField(",mytho", "Giga mytho")
       .addField(",nrv", "Afficher que vous êtes 13NRV")
       .addField(",dance", "Déhanchez-vous sur le dancefloor")
       .addField(",cat", "Envoie une image aléatoire de chat")
@@ -38,6 +39,10 @@ client.on('message', message => {
 
   if (message.content.startsWith(prefix + "sad")) {
     message.channel.send("rt si c trist", {files: ["https://i.pinimg.com/originals/74/65/29/7465290119e3c6e757ab77ddcb9ef5dc.gif"]});
+  }
+
+  if (message.content.startsWith(prefix + "mytho")) {
+    message.channel.send("rt si c trist", {files: ["https://media.discordapp.net/attachments/731067309426343946/731067949300973608/flute.gif"]});
   }
 
   if (message.content.startsWith(prefix + "nrv")) {
