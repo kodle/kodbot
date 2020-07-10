@@ -37,15 +37,15 @@ client.on('message', message => {
   }
 
   if (message.content.startsWith(prefix + "sad")) {
-    message.channel.reply("est triste.", {files: ["https://i.pinimg.com/originals/74/65/29/7465290119e3c6e757ab77ddcb9ef5dc.gif"]});
+    message.channel.send("rt si c trist", {files: ["https://i.pinimg.com/originals/74/65/29/7465290119e3c6e757ab77ddcb9ef5dc.gif"]});
   }
 
   if (message.content.startsWith(prefix + "nrv")) {
-    message.channel.reply("est 13NRV.", {files: ["https://media0.giphy.com/media/l4FGr2zM1Z3u3OC5i/source.gif"]});
+    message.channel.send("13NRV", {files: ["https://media0.giphy.com/media/l4FGr2zM1Z3u3OC5i/source.gif"]});
   }
 
   if (message.content.startsWith(prefix + "dance")) {
-    message.channel.reply("dance comme Balkany.", {files: ["https://media.discordapp.net/attachments/556815696399564802/724662886865174578/1592818682-ezgif-2-093ae4545c4f_1.gif"]});
+    message.channel.send("dance comme Balkany", {files: ["https://media.discordapp.net/attachments/556815696399564802/724662886865174578/1592818682-ezgif-2-093ae4545c4f_1.gif"]});
   }
 
   if (message.content.startsWith(prefix + "cat")) {
