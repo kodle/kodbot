@@ -20,6 +20,7 @@ client.on('ready', () => {
 client.on('message', message => {
   
   const args = message.content.slice(prefix.length).split(' ');
+  const command = args.shift().toLowerCase();
   
   if (message.content === 'ping') {
     message.reply('pong!');
@@ -95,7 +96,8 @@ client.on('message', message => {
       console.log("say")
     }
   } catch (e) {
-    message.reply("tg")
+    message.reply("tg");
+    console.log("tentative de say")
     }
   }
 
