@@ -76,8 +76,9 @@ client.on("message", message => {
     console.log(`dice ${rand()}`);
   }
 
-module.exports.help = {
-  name: "dice"
-};
-};
+  module.exports.help = {
+    name: "dice"
+  };
+});
+
 client.login(token);
