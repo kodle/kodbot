@@ -83,7 +83,7 @@ client.on('message', message => {
     console.log("lenny");
   }
   
-  if(message.content.startsWith(prefix + "say"){
+  if(message.content.startsWith(prefix + "say")) {
     if(message.member.roles.some(r=>["kd"].includes(r.name)) ) {
     let text = args.slice(0).join(" ");
     message.delete();
