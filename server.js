@@ -87,13 +87,16 @@ client.on('message', message => {
   }
   
   if(message.content.startsWith(prefix + "say")) {
-    if(message.member.roles.cache.some(r=>["kd"].includes(r.name)) ) {
-    let text = args.slice(0).join(" ");
-    message.delete();
-    message.channel.send(text);
-    console.log("say")
+    try {
+      if(message.member.roles.cache.some(r=>["kd"].includes(r.name))) {
+      let text = args.slice(0).join(" ");
+      message.delete();
+      message.channel.send(text);
+      console.log("say")
+    }
   } catch (e) {
-    message.reply("tg"); 
+    message.reply("tg")
+    }
   }
 
 });
