@@ -74,8 +74,6 @@ client.on('message', message => {
     message.channel.send("Le rôle a été ajouté.")
   }
 
-  }
-
   // -- GIF --
 
   if (message.content.startsWith(prefix + "sad")) {
