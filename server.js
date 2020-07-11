@@ -25,7 +25,7 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).split(' ');
   const command = args.shift().toLowerCase();
 
-  // var guildid = client.guilds.get("556815695120433152");
+  /* var guildid = client.guilds.get("556815695120433152");
   let member = message.mentions.members.first();
 
   var csgo = member.guild.roles.cache.find(role => role.name === "Counter-Strike");
@@ -33,7 +33,7 @@ client.on('message', message => {
   var terraria = member.guild.roles.cache.find(role => role.name === "Terraria");
   var valo = member.guild.roles.cache.find(role => role.name === "VALORANT");
   var wow = member.guild.roles.cache.find(role => role.name === "World of Warcraft");
-  var dtd = member.guild.roles.cache.find(role => role.name === "7 Days To Die");
+  var dtd = member.guild.roles.cache.find(role => role.name === "7 Days To Die"); */
 
   // -- Commande de test --
 
