@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const randomnum = require("unique-random");
 const rand = randomnum(1, 6);
 
+
 const { MessageEmbed } = require("discord.js");
 const { get } = require("snekfetch");
 
@@ -22,7 +23,7 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).split(' ');
   const command = args.shift().toLowerCase();
 
-  var member = message.author;
+  // var member = message.author;
 
   var csgo = member.guild.roles.cache.find(role => role.name === "Counter-Strike");
   var mc = member.guild.roles.cache.find(role => role.name === "Minecraft");
@@ -31,13 +32,13 @@ client.on('message', message => {
   var wow = member.guild.roles.cache.find(role => role.name === "World of Warcraft");
   var dtd = member.guild.roles.cache.find(role => role.name === "7 Days To Die");
 
-  // Commande de test
+  // -- Commande de test --
 
   if (message.content === 'ping') {
     message.reply('pong!');
   }
 
-  // Help
+  // -- Help --
 
   if (message.content.startsWith(prefix + "help")) {
     const embed = new Discord.MessageEmbed()
@@ -68,14 +69,14 @@ client.on('message', message => {
     console.log("roles");
   }
 
-  // Commande de rôles
+  // -- Commande de rôles --
 
   if (message.content.startsWith(prefix + "csgo")) {
     message.reply("le rôle a été ajouté.")
     member.roles.add(csgo);
   }
 
-  // GIF
+  // -- GIF --
 
   if (message.content.startsWith(prefix + "sad")) {
     message.channel.send("rt si c trist", {files: ["https://i.pinimg.com/originals/74/65/29/7465290119e3c6e757ab77ddcb9ef5dc.gif"]});
@@ -89,7 +90,7 @@ client.on('message', message => {
     message.channel.send("dance comme Balkany", {files: ["https://media.discordapp.net/attachments/556815696399564802/724662886865174578/1592818682-ezgif-2-093ae4545c4f_1.gif"]});
   }
 
-  // Autres commandes
+  // -- Autres commandes --
 
   if (message.content.startsWith(prefix + "cat")) {
     try {
