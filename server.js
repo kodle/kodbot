@@ -69,8 +69,8 @@ client.on('message', message => {
   // Commande de rôles
 
   if (message.content.startsWith(prefix + "csgo")) {
-    message.reply("le rôle a été ajouté.") 
-    member.roles.add(csgo);
+    message.reply("le rôle a été ajouté.")
+    message.author.roles.add(csgo);
   }
 
   // GIF
