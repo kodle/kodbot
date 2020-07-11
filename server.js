@@ -71,7 +71,7 @@ client.on('message', message => {
   // -- Commande de rôles --
 
   if (message.content.startsWith(prefix + "csgo")) {
-    message.author.addRole(csgo).catch(console.error);
+    message.author.roles.add(csgo).catch(console.error);
     message.channel.send("Le rôle a été ajouté.")
   }
 
