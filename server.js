@@ -22,6 +22,8 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).split(' ');
   const command = args.shift().toLowerCase();
 
+  var member = message.author;
+
   var csgo = member.guild.roles.cache.find(role => role.name === "Counter-Strike");
   var mc = member.guild.roles.cache.find(role => role.name === "Minecraft");
   var terraria = member.guild.roles.cache.find(role => role.name === "Terraria");
@@ -70,7 +72,7 @@ client.on('message', message => {
 
   if (message.content.startsWith(prefix + "csgo")) {
     message.reply("le rôle a été ajouté.")
-    message.author.roles.add(csgo);
+    member.roles.add(csgo);
   }
 
   // GIF
