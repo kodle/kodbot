@@ -11,11 +11,13 @@ const prefix = ","
 const token = process.env.TOKEN;
 
 client.on('ready', () => {
+
+  client.user.setActivity("@kodle#1857", { type: "WATCHING"})
+
   console.log(`Logged in as ${client.user.tag}!`);
   console.log("Node version: " + process.version);
   console.log("DiscordJS version: " + Discord.version);
 
-  client.user.setPresence({ game: { name: 'pièce', type: 0 } });
 });
 
 client.on('message', message => {
