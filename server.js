@@ -78,7 +78,7 @@ client.on('message', message => {
     guildMember.roles.add(csgo);
     message.reply("le rôle a été ajouté.")
   } else {
-      if (message.member.roles.has('650815370256449536')) {
+      if (message.member.roles.cache.has('650815370256449536')) {
         message.reply("tu as déjà ce rôle.")
     }
   }
