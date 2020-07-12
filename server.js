@@ -184,16 +184,7 @@ client.on('message', message => {
        message.reply("tu n'as pas ce rôle.")
     }
   }
-
-  if (message.content.startsWith(delprefix + "csgo")) {
-    guildMember.roles.remove(csgo);
-    message.reply("le rôle a été supprimé.")
-  } else {
-    if (message.member.roles.cache.has('650815370256449536')) {
-       message.reply("tu n'as pas ce rôle.")
-    }
-  }
-
+  
   // -- GIF --
 
   if (message.content.startsWith(prefix + "sad")) {
