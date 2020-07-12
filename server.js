@@ -67,6 +67,7 @@ client.on('message', message => {
       .addField(",valo", "VALORANT")
       .addField(",wow", "World of Warcraft")
       .addField(",7dtd", "7 Days To Die")
+      .addField(",del(role)", "Supprimer le rôle")
     message.channel.send(embed);
     console.log("roles");
   }
@@ -77,7 +78,7 @@ client.on('message', message => {
     guildMember.roles.add(csgo);
     message.reply("le rôle a été ajouté.")
   } else {
-      if (message.member.roles.cache.some(r => r.name === 'Counter-Strike')) {
+      if (message.member.roles.has('650815370256449536')) {
         message.reply("tu as déjà ce rôle.")
     }
   }
