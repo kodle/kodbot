@@ -26,7 +26,7 @@ client.on('message', message => {
   const command = args.shift().toLowerCase();
 
   // var guild = client.guilds.get("556815695120433152");
-  var member = message.mentions.members.first();
+  let member = message.mentions.members.first();
 
   let csgo = message.guild.roles.cache.find(r => r.name === "Counter-Strike");
   let mc = message.guild.roles.cache.find(r => r.name === "Minecraft");
@@ -75,7 +75,7 @@ client.on('message', message => {
   // -- Commande de rôles --
 
   if (message.content.startsWith(prefix + "csgo")) {
-    member.addRole(csgo).catch(console.error);
+    message.mentions.members.first().addRole(csgo).catch(console.error);
     message.reply("le rôle a été ajouté.")
   } else {
       if(message.member.role.cache.some(r=>["Counter-Strike"].includes(r.name)) ) {
