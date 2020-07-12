@@ -8,6 +8,7 @@ const { MessageEmbed } = require("discord.js");
 const { get } = require("snekfetch");
 
 const prefix = ","
+const delprefix = ",del"
 const token = process.env.TOKEN;
 
 client.on('ready', () => {
@@ -130,7 +131,61 @@ client.on('message', message => {
 
   // -- Commande pour supprimer un rôle --
 
-  if (message.content.startsWith(prefix + "del" + "csgo")) {
+  if (message.content.startsWith(delprefix + "csgo")) {
+    guildMember.roles.remove(csgo);
+    message.reply("le rôle a été supprimé.")
+  } else {
+    if (message.member.roles.cache.has('650815370256449536')) {
+       message.reply("tu n'as pas ce rôle.")
+    }
+  }
+
+  if (message.content.startsWith(delprefix + "mc")) {
+    guildMember.roles.remove(mc);
+    message.reply("le rôle a été supprimé.")
+  } else {
+    if (message.member.roles.cache.has('615833963885494291')) {
+       message.reply("tu n'as pas ce rôle.")
+    }
+  }
+
+  if (message.content.startsWith(delprefix + "terraria")) {
+    guildMember.roles.remove(terraria);
+    message.reply("le rôle a été supprimé.")
+  } else {
+    if (message.member.roles.cache.has('618367727404449792')) {
+       message.reply("tu n'as pas ce rôle.")
+    }
+  }
+
+  if (message.content.startsWith(delprefix + "valo")) {
+    guildMember.roles.remove(valo);
+    message.reply("le rôle a été supprimé.")
+  } else {
+    if (message.member.roles.cache.has('712606554934739015')) {
+       message.reply("tu n'as pas ce rôle.")
+    }
+  }
+
+  if (message.content.startsWith(delprefix + "wow")) {
+    guildMember.roles.remove(wow);
+    message.reply("le rôle a été supprimé.")
+  } else {
+    if (message.member.roles.cache.has('705358835413680239')) {
+       message.reply("tu n'as pas ce rôle.")
+    }
+  }
+
+  if (message.content.startsWith(delprefix + "7dtd")) {
+    guildMember.roles.remove(dtd);
+    message.reply("le rôle a été supprimé.")
+  } else {
+    if (message.member.roles.cache.has('727984505834569751')) {
+       message.reply("tu n'as pas ce rôle.")
+    }
+  }
+
+  if (message.content.startsWith(delprefix + "csgo")) {
     guildMember.roles.remove(csgo);
     message.reply("le rôle a été supprimé.")
   } else {
