@@ -25,7 +25,7 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).split(' ');
   const command = args.shift().toLowerCase();
 
-  var guild = client.guilds.get("556815695120433152");
+  // var guild = client.guilds.get("556815695120433152");
   let member = message.mentions.members.first();
 
   let csgo = message.guild.roles.cache.find(r => r.name === "Counter-Strike");
