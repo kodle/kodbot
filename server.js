@@ -139,7 +139,7 @@ client.on('message', message => {
        message.reply("tu n'as pas ce rôle.")
     }
   }
-
+/*
   if (message.content.startsWith(delprefix + "mc")) {
     guildMember.roles.remove(mc);
     message.reply("le rôle a été supprimé.")
@@ -183,7 +183,8 @@ client.on('message', message => {
     if (message.member.roles.cache.has('727984505834569751')) {
        message.reply("tu n'as pas ce rôle.")
     }
-  }
+  } */
+
   
   // -- GIF --
 
