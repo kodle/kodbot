@@ -75,7 +75,7 @@ client.on('message', message => {
   // -- Commande de rôles --
 
   if (message.content.startsWith(prefix + "csgo")) {
-    message.mentions.members.first().addRole(csgo).catch(console.error);
+    member.addRole(csgo).catch(console.error);
     message.reply("le rôle a été ajouté.")
   } else {
       if(message.member.role.cache.some(r=>["Counter-Strike"].includes(r.name)) ) {
