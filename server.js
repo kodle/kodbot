@@ -75,10 +75,10 @@ client.on('message', message => {
   // -- Commande de rôles --
 
   if (message.content.startsWith(prefix + "csgo")) {
-    member.addRole(csgo).catch(console.error);
+    member.role.add(csgo).catch(console.error);
     message.channel.send("Le rôle a été ajouté.")
   } else {
-      if(message.member.roles.cache.some(r=>["Counter-Strike", "Minecraft", "Terraria", "VALORANT", "World of Warcraft", "7 Days To Die"].includes(r.name)) ) {
+      if(message.member.roles.cache.some(r=>["Counter-Strike"].includes(r.name)) ) {
         message.reply("tu as déjà ce rôle.")
       }
   }
