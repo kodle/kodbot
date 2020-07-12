@@ -83,6 +83,51 @@ client.on('message', message => {
     }
   }
 
+  if (message.content.startsWith(prefix + "mc")) {
+    if (message.member.roles.cache.has('615833963885494291')) {
+       message.reply("tu as déjà ce rôle.")
+  } else {
+    guildMember.roles.add(mc);
+    message.reply("le rôle a été ajouté.")
+    }
+  }
+
+  if (message.content.startsWith(prefix + "terraria")) {
+    if (message.member.roles.cache.has('618367727404449792')) {
+       message.reply("tu as déjà ce rôle.")
+  } else {
+    guildMember.roles.add(terraria);
+    message.reply("le rôle a été ajouté.")
+    }
+  }
+
+  if (message.content.startsWith(prefix + "valo")) {
+    if (message.member.roles.cache.has('712606554934739015')) {
+       message.reply("tu as déjà ce rôle.")
+  } else {
+    guildMember.roles.add(valo);
+    message.reply("le rôle a été ajouté.")
+    }
+  }
+
+  if (message.content.startsWith(prefix + "wow")) {
+    if (message.member.roles.cache.has('705358835413680239')) {
+       message.reply("tu as déjà ce rôle.")
+  } else {
+    guildMember.roles.add(wow);
+    message.reply("le rôle a été ajouté.")
+    }
+  }
+
+  if (message.content.startsWith(prefix + "7dtd")) {
+    if (message.member.roles.cache.has('727984505834569751')) {
+       message.reply("tu as déjà ce rôle.")
+  } else {
+    guildMember.roles.add(dtd);
+    message.reply("le rôle a été ajouté.")
+    }
+  }
+
   // -- GIF --
 
   if (message.content.startsWith(prefix + "sad")) {
