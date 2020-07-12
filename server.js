@@ -72,7 +72,7 @@ client.on('message', message => {
     console.log("roles");
   }
 
-  // -- Commande de rôles --
+  // -- Commande pour ajouter un rôle --
 
   if (message.content.startsWith(prefix + "csgo")) {
     if (message.member.roles.cache.has('650815370256449536')) {
@@ -125,6 +125,17 @@ client.on('message', message => {
   } else {
     guildMember.roles.add(dtd);
     message.reply("le rôle a été ajouté.")
+    }
+  }
+
+  // -- Commande pour supprimer un rôle --
+
+  if (message.content.startsWith(prefix + "del" + "csgo")) {
+    if (message.member.roles.cache.has('650815370256449536')) {
+       message.reply("tu n'as pas ce rôle.")
+  } else {
+    guildMember.roles.remove(csgo);
+    message.reply("le rôle a été supprimé.")
     }
   }
 
