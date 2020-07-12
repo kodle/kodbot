@@ -84,7 +84,6 @@ client.on('message', message => {
       /* if(message.member.role.cache.some(r=>["Counter-Strike"].includes(r.name)) ) {
         message.reply("tu as déjà ce rôle.") */
       }
-  }
 
   // -- GIF --
 
