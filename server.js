@@ -29,7 +29,7 @@ client.on('message', message => {
   // let member = message.mentions.members.first();
 
   const guildMember = message.member;
-  const role = message.guild.roles.find('name', 'Counter-Strike');
+  const role = message.guild.roles.cache.find('name', 'Counter-Strike');
 
   /* let csgo = message.guild.roles.cache.find(r => r.name === "Counter-Strike");
   let mc = message.guild.roles.cache.find(r => r.name === "Minecraft");
