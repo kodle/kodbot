@@ -131,11 +131,11 @@ client.on('message', message => {
   // -- Commande pour supprimer un rôle --
 
   if (message.content.startsWith(prefix + "del" + "csgo")) {
-    if (message.member.roles.cache.has('650815370256449536')) {
-       message.reply("tu n'as pas ce rôle.")
-  } else {
     guildMember.roles.remove(csgo);
     message.reply("le rôle a été supprimé.")
+  } else {
+    if (message.member.roles.cache.has('650815370256449536')) {
+       message.reply("tu n'as pas ce rôle.")
     }
   }
 
