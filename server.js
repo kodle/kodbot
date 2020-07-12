@@ -77,7 +77,7 @@ client.on('message', message => {
     guildMember.roles.add(csgo);
     message.reply("le rôle a été ajouté.")
   } else {
-      message.reply("tu as déjà ce rôle.")
+    //  message.reply("tu as déjà ce rôle.")
   }
 
   // -- GIF --
