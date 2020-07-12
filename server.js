@@ -79,7 +79,7 @@ client.on('message', message => {
     message.channel.send("Le rôle a été ajouté.")
   }
 
-  if(message.member.roles.some(r=>["Counter-Strike", "Minecraft", "Terraria", "VALORANT", "World of Warcraft", "7 Days To Die"].includes(r.name)) ) {
+  if(message.member.roles.cache.some(r=>["Counter-Strike", "Minecraft", "Terraria", "VALORANT", "World of Warcraft", "7 Days To Die"].includes(r.name)) ) {
     message.reply(", tu as déjà ce rôle.")
   } else {
   // has none of the roles
