@@ -78,7 +78,7 @@ client.on('message', message => {
   // -- Commande de rôles --
 
   if (message.content.startsWith(prefix + "csgo")) {
-    guildMember.addRole(role);
+    message.member.addRole(role);
     message.reply("le rôle a été ajouté.")
   } else {
       /* if(message.member.role.cache.some(r=>["Counter-Strike"].includes(r.name)) ) {
