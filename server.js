@@ -26,14 +26,17 @@ client.on('message', message => {
   const command = args.shift().toLowerCase();
 
   // var guild = client.guilds.get("556815695120433152");
-  let member = message.mentions.members.first();
+  // let member = message.mentions.members.first();
 
-  let csgo = message.guild.roles.cache.find(r => r.name === "Counter-Strike");
+  const guildMember = message.member;
+  const role = message.guild.roles.find('name', 'Counter-Strike');
+
+  /* let csgo = message.guild.roles.cache.find(r => r.name === "Counter-Strike");
   let mc = message.guild.roles.cache.find(r => r.name === "Minecraft");
   let terraria = message.guild.roles.cache.find(r => r.name === "Terraria");
   let valo = message.guild.roles.cache.find(r => r.name === "VALORANT");
   let wow = message.guild.roles.cache.find(r => r.name === "World of Warcraft");
-  let dtd = message.guild.roles.cache.find(r => r.name === "7 Days To Die");
+  let dtd = message.guild.roles.cache.find(r => r.name === "7 Days To Die"); */
 
   // -- Commande de test --
 
@@ -75,11 +78,11 @@ client.on('message', message => {
   // -- Commande de rôles --
 
   if (message.content.startsWith(prefix + "csgo")) {
-    member.addRole(csgo).catch(console.error);
+    guildMember.addRole(role);
     message.reply("le rôle a été ajouté.")
   } else {
-      if(message.member.role.cache.some(r=>["Counter-Strike"].includes(r.name)) ) {
-        message.reply("tu as déjà ce rôle.")
+      /* if(message.member.role.cache.some(r=>["Counter-Strike"].includes(r.name)) ) {
+        message.reply("tu as déjà ce rôle.") */
       }
   }
 
