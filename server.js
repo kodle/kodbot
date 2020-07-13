@@ -30,6 +30,7 @@ client.on('message', message => {
 
   const csgo = message.guild.roles.cache.find(r => r.name === "Counter-Strike");
   const mc = message.guild.roles.cache.find(r => r.name === "Minecraft");
+  const tts = message.guild.roles.cache.find(r => r.name === "Tabletop Simulator");
   const terraria = message.guild.roles.cache.find(r => r.name === "Terraria");
   const valo = message.guild.roles.cache.find(r => r.name === "VALORANT");
   const wow = message.guild.roles.cache.find(r => r.name === "World of Warcraft");
@@ -64,6 +65,7 @@ client.on('message', message => {
       .setTitle("Listes des rôles")
       .addField(",csgo", "Counter-Strike")
       .addField(",mc", "Minecraft")
+      .addField(",tts", "Tabletop Simulator")
       .addField(",terraria", "Terraria")
       .addField(",valo", "VALORANT")
       .addField(",wow", "World of Warcraft")
@@ -89,6 +91,15 @@ client.on('message', message => {
        message.reply("tu as déjà ce rôle.")
   } else {
     guildMember.roles.add(mc);
+    message.reply("le rôle a été ajouté.")
+    }
+  }
+
+  if (message.content.startsWith(prefix + "tts")) {
+    if (message.member.roles.cache.has('732205263641247844')) {
+       message.reply("tu as déjà ce rôle.")
+  } else {
+    guildMember.roles.add(tts);
     message.reply("le rôle a été ajouté.")
     }
   }
