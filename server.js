@@ -160,6 +160,12 @@ client.on('message', message => {
     }
   } */
 
+  if (message.content.startsWith(delprefix + "tts")) {
+    guildMember.roles.remove(dtd);
+    message.reply("le rôle a été supprimé.")
+  }
+
+
   if (message.content.startsWith(delprefix + "terraria")) {
     guildMember.roles.remove(terraria);
     message.reply("le rôle a été supprimé.")
