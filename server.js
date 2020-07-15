@@ -17,7 +17,7 @@ const token = process.env.TOKEN;
 
 client.on('ready', () => {
 
-  client.user.setActivity("le tchat", { type: "WATCHING"})
+  client.user.setActivity("le tchat, /help", { type: "WATCHING"})
 
   console.log(`Logged in as ${client.user.tag}!`);
   console.log("Node version: " + process.version);
