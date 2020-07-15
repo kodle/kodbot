@@ -82,7 +82,7 @@ client.on('message', message => {
   }
 
   if (message.content.startsWith(prefix + "majordome")) {
-    message.channel.send("Ça c'est moi, je ne suis qu'un simple majordome. Faites /help pour afficher les autres commandes.")
+    message.channel.send(client.emojis.cache.get("732893417167650876" + "Ça c'est moi, je ne suis qu'un simple majordome. \nFaites /help pour afficher les autres commandes.")
   }
 
   // -- Commande pour ajouter un rôle --
