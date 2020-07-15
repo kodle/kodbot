@@ -81,6 +81,10 @@ client.on('message', message => {
     console.log("roles");
   }
 
+  if (message.content.startsWith(prefix + "majordome")) {
+    message.channel.send("Ça c'est moi, je ne suis qu'un simple majordome. Faites /help pour afficher les autres commandes.")
+  }
+
   // -- Commande pour ajouter un rôle --
 
   if (message.content.startsWith(prefix + "csgo")) {
