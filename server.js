@@ -115,7 +115,7 @@ client.on('message', message => {
     guildMember.roles.add(terraria);
     message.reply("le rôle a été ajouté.")
     }
-  }
+  } 
 
   if (message.content.startsWith(prefix + "valo")) {
     if (message.member.roles.cache.has('712606554934739015')) {
