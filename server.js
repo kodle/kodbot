@@ -9,7 +9,7 @@ const { get } = require("snekfetch");
 
 const prefix = ","
 const delprefix = ",del"
-const token = process.env.TOKEN;
+const token = process.env.TOKEN; 
 
 
 client.on('ready', () => {
