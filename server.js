@@ -17,7 +17,7 @@ const token = process.env.TOKEN;
 
 client.on('ready', () => {
 
-  client.user.setActivity("SkyNet Simulator 2020", { type: "PLAYING"})
+  client.user.setActivity("VALORANT", { type: "PLAYING"})
 
   console.log(`Logged in as ${client.user.tag}!`);
   console.log("Node version: " + process.version);
