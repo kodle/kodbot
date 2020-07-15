@@ -1,1 +1,1 @@
-web: npm install giphy-api
+worker: node ./server.js
