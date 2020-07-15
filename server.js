@@ -52,13 +52,15 @@ client.on('message', message => {
     const embed = new Discord.MessageEmbed()
       .setColor(0x1abc9c)
       .setTitle("Listes des commandes")
-      .addField(",roles", "Afficher les rôles")
-      .addField(",sad", "Afficher votre tristesse")
-      .addField(",nrv", "Afficher que vous êtes 13NRV")
-      .addField(",dance", "Déhanchez-vous sur le dancefloor")
-      .addField(",cat", "Envoie une image aléatoire de chat")
-      .addField(",dice", "Fait rouler un dé entre 1 et 6")
-      .addField(",lenny", "( ͡° ͜ʖ ͡°)")
+      .addField("roles", "Afficher les rôles")
+      .addField("sad", "Afficher votre tristesse")
+      .addField("nrv", "Afficher que vous êtes 13NRV")
+      .addField("dance", "Déhanchez-vous sur le dancefloor")
+      .addField("bonjour", "Envoie un gif aléatoire de Bonjour")
+      .addField("cat", "Envoie une image aléatoire de chat")
+      .addField("dice", "Fait rouler un dé entre 1 et 6")
+      .addField("lenny", "( ͡° ͜ʖ ͡°)")
+      .addField("spotify", "Les playlists de kodle")
     message.channel.send(embed);
     console.log("help");
   }
@@ -115,7 +117,7 @@ client.on('message', message => {
     guildMember.roles.add(terraria);
     message.reply("le rôle a été ajouté.")
     }
-  } 
+  }
 
   if (message.content.startsWith(prefix + "valo")) {
     if (message.member.roles.cache.has('712606554934739015')) {
@@ -264,6 +266,11 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + "lenny")) {
     message.channel.send("( ͡° ͜ʖ ͡°)");
     console.log("lenny");
+  }
+
+  if (message.content.startsWith(prefix + "spotify")) {
+    message.channel.send("https://open.spotify.com/user/1hg3mjywldar5fd24m5lii7el?si=cFkYjDXaQ7aE5bww8aw6GA")
+    console.log("spotify")
   }
 
 });
