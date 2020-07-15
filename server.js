@@ -7,9 +7,12 @@ const rand = randomnum(1, 6);
 const { MessageEmbed } = require("discord.js");
 const { get } = require("snekfetch");
 
-const prefix = ","
-const delprefix = ",del"
-const token = process.env.TOKEN; 
+const prefix = "/";
+const delprefix = prefix + "del";
+const gprefix = prefix + "g";
+
+const token = process.env.TOKEN;
+var giphy = require('giphy-api')(process.env.GIPHY);
 
 
 client.on('ready', () => {
@@ -219,6 +222,19 @@ client.on('message', message => {
   }
 
   // -- Autres commandes --
+
+  if (messag.content.startsWith(prefix + "bonjour")) {
+    giphy.search("bonjour", { q: "fail" })
+      .then(response => {
+        var totalResponses = response.data.length;
+        var responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
+        var responseFinal = response.data[responseIndex]
+
+        message.channel.send({
+          files: [responseFinal.images.fixed_height.url]
+        })
+    });
+  }
 
   if (message.content.startsWith(prefix + "cat")) {
     try {
