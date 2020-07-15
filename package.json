@@ -1,7 +1,7 @@
 {
   "name": "kodbot",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Personnal Discord bot for my server. From Neptr. Hosted on Heroku.com.",
   "main": "server.js",
   "dependencies": {
     "discord.js": "^12.2.0",
@@ -19,5 +19,13 @@
   },
   "keywords": [],
   "author": "kodle",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodle/kodbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kodle/kodbot/issues"
+  },
+  "homepage": "https://github.com/kodle/kodbot#readme"
 }
