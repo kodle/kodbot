@@ -15,7 +15,7 @@ const token = process.env.TOKEN;
 // var giphy = require('giphy-api')(process.env.GIPHY);
 
 
-client.on('ready', () => {
+client.on('ready', () => { 
 
   client.user.setActivity("le tchat, /help", { type: "WATCHING"})
 
