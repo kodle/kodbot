@@ -15,7 +15,7 @@ const token = process.env.TOKEN;
 // var giphy = require('giphy-api')(process.env.GIPHY);
 
 
-client.on('ready', () => { 
+client.on('ready', () => {
 
   client.user.setActivity("le tchat, /help", { type: "WATCHING"})
 
@@ -69,14 +69,14 @@ client.on('message', message => {
     const embed = new Discord.MessageEmbed()
       .setColor(0x1abc9c)
       .setTitle("Listes des rôles")
-      .addField(",csgo", "Counter-Strike")
-      .addField(",mc", "Minecraft")
-      .addField(",tts", "Tabletop Simulator")
-      .addField(",terraria", "Terraria")
-      .addField(",valo", "VALORANT")
-      .addField(",wow", "World of Warcraft")
-      .addField(",7dtd", "7 Days To Die")
-      .addField(",del(role)", "Supprimer le rôle")
+      .addField("csgo", "Counter-Strike")
+      .addField("mc", "Minecraft")
+      .addField("tts", "Tabletop Simulator")
+      .addField("terraria", "Terraria")
+      .addField("valo", "VALORANT")
+      .addField("wow", "World of Warcraft")
+      .addField("7dtd", "7 Days To Die")
+      .addField("del(role)", "Supprimer le rôle")
     message.channel.send(embed);
     console.log("roles");
   }
