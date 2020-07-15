@@ -12,7 +12,7 @@ const delprefix = prefix + "del";
 const gprefix = prefix + "g";
 
 const token = process.env.TOKEN;
-var giphy = require('giphy-api')(process.env.GIPHY);
+// var giphy = require('giphy-api')(process.env.GIPHY);
 
 
 client.on('ready', () => {
@@ -56,7 +56,7 @@ client.on('message', message => {
       .addField("sad", "Afficher votre tristesse")
       .addField("nrv", "Afficher que vous êtes 13NRV")
       .addField("dance", "Déhanchez-vous sur le dancefloor")
-      .addField("bonjour", "Envoie un gif aléatoire de Bonjour")
+      //.addField("bonjour", "Envoie un gif aléatoire de Bonjour")
       .addField("cat", "Envoie une image aléatoire de chat")
       .addField("dice", "Fait rouler un dé entre 1 et 6")
       .addField("lenny", "( ͡° ͜ʖ ͡°)")
@@ -225,7 +225,7 @@ client.on('message', message => {
 
   // -- Autres commandes --
 
-  if (messag.content.startsWith(prefix + "bonjour")) {
+  /*if (message.content.startsWith(prefix + "bonjour")) {
     giphy.search("bonjour", { q: "fail" })
       .then(response => {
         var totalResponses = response.data.length;
@@ -236,7 +236,7 @@ client.on('message', message => {
           files: [responseFinal.images.fixed_height.url]
         })
     });
-  }
+  }*/
 
   if (message.content.startsWith(prefix + "cat")) {
     try {
