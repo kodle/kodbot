@@ -83,7 +83,7 @@ client.on('message', message => {
   }
 
   if (message.content.startsWith(prefix + "majordome")) {
-    message.channel.send(fedora + "Ça c'est moi, je ne suis qu'un simple majordome. \nFaites /help pour afficher les autres commandes.")
+    message.channel.send(fedora + " Ça c'est moi, je ne suis qu'un simple majordome. \nFaites /help pour afficher les autres commandes.")
   }
 
   // -- Commande pour ajouter un rôle --
