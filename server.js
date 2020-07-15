@@ -31,7 +31,7 @@ client.on('message', message => {
   const command = args.shift().toLowerCase();
 
   const guildMember = message.member;
-  const fedora = client.emojis.cache.get("<:fedora:731065867802116169>");
+  const fedora = client.emojis.cache.get("<731065867802116169>");
 
   const csgo = message.guild.roles.cache.find(r => r.name === "Counter-Strike");
   const mc = message.guild.roles.cache.find(r => r.name === "Minecraft");
