@@ -31,6 +31,7 @@ client.on('message', message => {
   const command = args.shift().toLowerCase();
 
   const guildMember = message.member;
+  const fedora = client.emojis.cache.get("732893417167650876");
 
   const csgo = message.guild.roles.cache.find(r => r.name === "Counter-Strike");
   const mc = message.guild.roles.cache.find(r => r.name === "Minecraft");
@@ -82,7 +83,7 @@ client.on('message', message => {
   }
 
   if (message.content.startsWith(prefix + "majordome")) {
-    message.channel.send(client.emojis.cache.get("732893417167650876") + "Ça c'est moi, je ne suis qu'un simple majordome. \nFaites /help pour afficher les autres commandes.")
+    message.channel.send(fedora + "Ça c'est moi, je ne suis qu'un simple majordome. \nFaites /help pour afficher les autres commandes.")
   }
 
   // -- Commande pour ajouter un rôle --
