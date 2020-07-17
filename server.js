@@ -106,14 +106,14 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + "couleurs")) {
     const embed = new Discord.MessageEmbed()
       .setColor(0x1abc9c)
-      .setTitle("Listes des rôles")
+      .setTitle("Listes des couleurs")
       .addField("rouge", "bah du rouge")
       .addField("jaune", "bah du jaune")
       .addField("bleu", "bah du bleu")
       .addField("vert", "bah du vert")
       .addField("violet", "bah du violet")
       .addField("rose", "bah du rose")
-      .addField("marron", "bah du marron)
+      .addField("marron", "bah du marron")
       .addField("del(role)", "Supprimer le rôle")
     message.channel.send(embed);
     console.log("couleurs");
