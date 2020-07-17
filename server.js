@@ -9,11 +9,13 @@ const { get } = require("snekfetch");
 
 const prefix = "/";
 const delprefix = prefix + "del";
-const gprefix = prefix + "g";
 
 const token = process.env.TOKEN;
 // var giphy = require('giphy-api')(process.env.GIPHY);
 
+client.on('guildMemberAdd', (guildMember) => {
+   guildMember.addRole(guildMember.guild.roles.cache.find(r => r.name === "Membre"));
+});
 
 client.on('ready', () => {
 
