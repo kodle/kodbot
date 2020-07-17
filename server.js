@@ -55,6 +55,10 @@ client.on('message', message => {
     message.reply('pong!');
   }
 
+  if (message.content === 'boing') {
+    message.channel.send("", {files: ["https://cdn.discordapp.com/attachments/589895016231600158/733621543212548170/416640644937678848.gif"]});
+  }
+
   // -- Help --
 
   if (message.content.startsWith(prefix + "help")) {
@@ -233,7 +237,7 @@ client.on('message', message => {
   }
 
   if (message.content.startsWith(prefix + "dance")) {
-    message.channel.send("dance comme Balkany", {files: ["https://media.discordapp.net/attachments/556815696399564802/724662886865174578/1592818682-ezgif-2-093ae4545c4f_1.gif"]});
+    message.channel.send("danse comme Balkany", {files: ["https://media.discordapp.net/attachments/556815696399564802/724662886865174578/1592818682-ezgif-2-093ae4545c4f_1.gif"]});
   }
 
   // -- Autres commandes --
