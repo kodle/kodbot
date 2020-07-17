@@ -25,7 +25,7 @@ client.on('guildMemberRemove', member => {
 
 client.on('ready', () => {
 
-  client.user.setActivity("Flight simulator 2020", { type: "PLAYING"})
+  client.user.setActivity("/help", { type: "PLAYING"})
 
   console.log(`Logged in as ${client.user.tag}!`);
   console.log("Node version: " + process.version);
