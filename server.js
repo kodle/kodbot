@@ -49,6 +49,14 @@ client.on('message', message => {
   const wow = message.guild.roles.cache.find(r => r.name === "World of Warcraft");
   const dtd = message.guild.roles.cache.find(r => r.name === "7 Days To Die");
 
+  const rouge = message.guild.roles.cache.find(r => r.name === "rouge");
+  const jaune = message.guild.roles.cache.find(r => r.name === "jaune");
+  const bleu = message.guild.roles.cache.find(r => r.name === "bleu");
+  const vert = message.guild.roles.cache.find(r => r.name === "vert");
+  const violet = message.guild.roles.cache.find(r => r.name === "violet");
+  const rose = message.guild.roles.cache.find(r => r.name === "rose");
+  const marron = message.guild.roles.cache.find(r => r.name === "marron");
+
   // -- Commande de test --
 
   if (message.content === 'ping') {
@@ -66,6 +74,7 @@ client.on('message', message => {
       .setColor(0x1abc9c)
       .setTitle("Listes des commandes")
       .addField("roles", "Afficher les rôles")
+      .addField("couleurs", "Afficher les couleurs disponible")
       .addField("sad", "Afficher votre tristesse")
       .addField("nrv", "Afficher que vous êtes 13NRV")
       .addField("dance", "Déhanchez-vous sur le dancefloor")
@@ -94,9 +103,22 @@ client.on('message', message => {
     console.log("roles");
   }
 
-  if (message.content.startsWith(prefix + "majordome")) {
-    message.channel.send("Ça c'est moi, je ne suis qu'un simple majordome. \nFaites /help pour afficher les autres commandes.")
+  if (message.content.startsWith(prefix + "couleurs")) {
+    const embed = new Discord.MessageEmbed()
+      .setColor(0x1abc9c)
+      .setTitle("Listes des rôles")
+      .addField("rouge", "Counter-Strike")
+      .addField("jaune", "Minecraft")
+      .addField("bleu", "Tabletop Simulator")
+      .addField("vert", "Terraria")
+      .addField("violet", "VALORANT")
+      .addField("rose", "World of Warcraft")
+      .addField("marron", "7 Days To Die")
+      .addField("del(role)", "Supprimer le rôle")
+    message.channel.send(embed);
+    console.log("couleurs");
   }
+
 
   // -- Commande pour ajouter un rôle --
 
@@ -163,25 +185,82 @@ client.on('message', message => {
     }
   }
 
+    // -- COULEURS --
+
+    if (message.content.startsWith(prefix + "rouge")) {
+      if (message.member.roles.cache.has('733641997599899709')) {
+         message.reply("tu as déjà ce rôle.")
+    } else {
+      guildMember.roles.add(rouge);
+      message.reply("le rôle a été ajouté.")
+      }
+    }
+
+    if (message.content.startsWith(prefix + "jaune")) {
+      if (message.member.roles.cache.has('733641132755386368')) {
+         message.reply("tu as déjà ce rôle.")
+    } else {
+      guildMember.roles.add(jaune);
+      message.reply("le rôle a été ajouté.")
+      }
+    }
+
+    if (message.content.startsWith(prefix + "bleu")) {
+      if (message.member.roles.cache.has('733641684906409994')) {
+         message.reply("tu as déjà ce rôle.")
+    } else {
+      guildMember.roles.add(bleu);
+      message.reply("le rôle a été ajouté.")
+      }
+    }
+
+    if (message.content.startsWith(prefix + "vert")) {
+      if (message.member.roles.cache.has('733641854951620639')) {
+         message.reply("tu as déjà ce rôle.")
+    } else {
+      guildMember.roles.add(vert);
+      message.reply("le rôle a été ajouté.")
+      }
+    }
+
+    if (message.content.startsWith(prefix + "violet")) {
+      if (message.member.roles.cache.has('733641253044093008')) {
+         message.reply("tu as déjà ce rôle.")
+    } else {
+      guildMember.roles.add(violet);
+      message.reply("le rôle a été ajouté.")
+      }
+    }
+
+    if (message.content.startsWith(prefix + "rose")) {
+      if (message.member.roles.cache.has('733641448121172030')) {
+         message.reply("tu as déjà ce rôle.")
+    } else {
+      guildMember.roles.add(rose);
+      message.reply("le rôle a été ajouté.")
+      }
+    }
+
+    if (message.content.startsWith(prefix + "marron")) {
+      if (message.member.roles.cache.has('733641548662833183')) {
+         message.reply("tu as déjà ce rôle.")
+    } else {
+      guildMember.roles.add(marron);
+      message.reply("le rôle a été ajouté.")
+      }
+    }
+
   // -- Commande pour supprimer un rôle --
 
   if (message.content.startsWith(delprefix + "csgo")) {
     guildMember.roles.remove(csgo);
     message.reply("le rôle a été supprimé.")
-  } /* else {
-    if (message.member.roles.cache.has('650815370256449536')) {
-       message.reply("tu n'as pas ce rôle.")
-    }
-  } */
+  }
 
   if (message.content.startsWith(delprefix + "mc")) {
     guildMember.roles.remove(mc);
     message.reply("le rôle a été supprimé.")
-  } /* else {
-    if (message.member.roles.cache.has('615833963885494291')) {
-       message.reply("tu n'as pas ce rôle.")
-    }
-  } */
+  }
 
   if (message.content.startsWith(delprefix + "tts")) {
     guildMember.roles.remove(dtd);
@@ -192,52 +271,74 @@ client.on('message', message => {
   if (message.content.startsWith(delprefix + "terraria")) {
     guildMember.roles.remove(terraria);
     message.reply("le rôle a été supprimé.")
-  } /* else {
-    if (message.member.roles.cache.has('618367727404449792')) {
-       message.reply("tu n'as pas ce rôle.")
-    }
-  } */
+  }
 
   if (message.content.startsWith(delprefix + "valo")) {
     guildMember.roles.remove(valo);
     message.reply("le rôle a été supprimé.")
-  } /* else {
-    if (message.member.roles.cache.has('712606554934739015')) {
-       message.reply("tu n'as pas ce rôle.")
-    }
-  } */
+  }
 
   if (message.content.startsWith(delprefix + "wow")) {
     guildMember.roles.remove(wow);
     message.reply("le rôle a été supprimé.")
-  } /* else {
-    if (message.member.roles.cache.has('705358835413680239')) {
-       message.reply("tu n'as pas ce rôle.")
-    }
-  } */
+  }
 
   if (message.content.startsWith(delprefix + "7dtd")) {
     guildMember.roles.remove(dtd);
     message.reply("le rôle a été supprimé.")
-  } /* else {
-    if (message.member.roles.cache.has('727984505834569751')) {
-       message.reply("tu n'as pas ce rôle.")
-    }
-  } */
+  }
+
+  // -- COULEURS DELETE --
+
+  if (message.content.startsWith(delprefix + "rouge")) {
+    guildMember.roles.remove(rouge);
+    message.reply("le rôle a été supprimé.")
+  }
+
+  if (message.content.startsWith(delprefix + "jaune")) {
+    guildMember.roles.remove(jaune);
+    message.reply("le rôle a été supprimé.")
+  }
+
+  if (message.content.startsWith(delprefix + "bleu")) {
+    guildMember.roles.remove(bleu);
+    message.reply("le rôle a été supprimé.")
+  }
+
+
+  if (message.content.startsWith(delprefix + "vert")) {
+    guildMember.roles.remove(vert);
+    message.reply("le rôle a été supprimé.")
+  }
+
+  if (message.content.startsWith(delprefix + "violet")) {
+    guildMember.roles.remove(violet);
+    message.reply("le rôle a été supprimé.")
+  }
+
+  if (message.content.startsWith(delprefix + "rose")) {
+    guildMember.roles.remove(rose);
+    message.reply("le rôle a été supprimé.")
+  }
+
+  if (message.content.startsWith(delprefix + "marron")) {
+    guildMember.roles.remove(marron);
+    message.reply("le rôle a été supprimé.")
+  }
 
 
   // -- GIF --
 
   if (message.content.startsWith(prefix + "sad")) {
-    message.channel.send("rt si c trist", {files: ["https://i.pinimg.com/originals/74/65/29/7465290119e3c6e757ab77ddcb9ef5dc.gif"]});
+    message.channel.send("", {files: ["https://i.pinimg.com/originals/74/65/29/7465290119e3c6e757ab77ddcb9ef5dc.gif"]});
   }
 
   if (message.content.startsWith(prefix + "nrv")) {
-    message.channel.send("13NRV", {files: ["https://media0.giphy.com/media/l4FGr2zM1Z3u3OC5i/source.gif"]});
+    message.channel.send("", {files: ["https://media0.giphy.com/media/l4FGr2zM1Z3u3OC5i/source.gif"]});
   }
 
   if (message.content.startsWith(prefix + "dance")) {
-    message.channel.send("danse comme Balkany", {files: ["https://media.discordapp.net/attachments/556815696399564802/724662886865174578/1592818682-ezgif-2-093ae4545c4f_1.gif"]});
+    message.channel.send("", {files: ["https://media.discordapp.net/attachments/556815696399564802/724662886865174578/1592818682-ezgif-2-093ae4545c4f_1.gif"]});
   }
 
   // -- Autres commandes --
