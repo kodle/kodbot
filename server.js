@@ -14,14 +14,14 @@ const token = process.env.TOKEN;
 // var giphy = require('giphy-api')(process.env.GIPHY);
 
 client.on('guildMemberAdd', (guildMember) => {
-  guildMember.guild.channels.cache.get('589895016231600158').send("Bienvenue sur la Compagnie !");
+  guildMember.guild.channels.cache.get('589895016231600158').send("Bienvenue" + guildMember "sur la Compagnie !");
   guildMember.roles.add(guildMember.guild.roles.cache.find(r => r.name === "Membre"));
   console.log("nouveau membre")
 });
 
 client.on('ready', () => {
 
-  client.user.setActivity("VALORANT", { type: "PLAYING"})
+  client.user.setActivity("Flight simulator 2020", { type: "PLAYING"})
 
   console.log(`Logged in as ${client.user.tag}!`);
   console.log("Node version: " + process.version);
