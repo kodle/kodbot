@@ -19,7 +19,7 @@ client.on('guildMemberAdd', (guildMember) => {
   console.log("nouveau membre");
 });
 
-bot.on('guildMemberRemove', member => {
+client.on('guildMemberRemove', member => {
     member.guild.channels.cache.get('589895016231600158').send(guildMember.user.username + ', a quitté la Compagnie :(');
 });
 
