@@ -14,9 +14,13 @@ const token = process.env.TOKEN;
 // var giphy = require('giphy-api')(process.env.GIPHY);
 
 client.on('guildMemberAdd', (guildMember) => {
-  guildMember.guild.channels.cache.get('589895016231600158').send(guildMember + ", bienvenue sur la Compagnie !");
+  guildMember.guild.channels.cache.get('589895016231600158').send(guildMember.user.username + ", bienvenue sur la Compagnie !");
   guildMember.roles.add(guildMember.guild.roles.cache.find(r => r.name === "Membre"));
   console.log("nouveau membre");
+});
+
+bot.on('guildMemberRemove', member => {
+    member.guild.channels.cache.get('589895016231600158').send(guildMember.user.username + ', a quitté la Compagnie :(');
 });
 
 client.on('ready', () => {
