@@ -16,12 +16,12 @@ const token = process.env.TOKEN;
 client.on('guildMemberAdd', (guildMember) => {
   guildMember.guild.channels.cache.get('589895016231600158').send(guildMember + ", bienvenue sur la Compagnie !");
   guildMember.roles.add(guildMember.guild.roles.cache.find(r => r.name === "Membre"));
-  console.log("nouveau membre")
+  console.log("nouveau membre");
 });
 
 client.on('ready', () => {
 
-  client.user.setActivity("Flight simulator 2020", { type: "PLAYING"})
+  client.user.setActivity("Flight simulator 2020"), { type: "PLAYING"})
 
   console.log(`Logged in as ${client.user.tag}!`);
   console.log("Node version: " + process.version);
