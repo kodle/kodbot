@@ -75,6 +75,7 @@ client.on('message', message => {
       .setTitle("Listes des commandes")
       .addField("/roles", "Afficher les rôles")
       .addField("/couleurs", "Afficher les couleurs disponible")
+      .addField("/uraken", "Johnny Cadillac")
       .addField("/sad", "Afficher votre tristesse")
       .addField("/nrv", "Afficher que vous êtes 13NRV")
       .addField("/dance", "Déhanchez-vous sur le dancefloor")
@@ -328,6 +329,10 @@ client.on('message', message => {
 
 
   // -- GIF --
+
+  if (message.content.startsWith(prefix + "uraken")) {
+    message.channel.send("", {files: ["https://tenor.com/view/johnny-cadillac-uraken-ouraken-gif-13105925"]});
+  }
 
   if (message.content.startsWith(prefix + "sad")) {
     message.channel.send("", {files: ["https://i.pinimg.com/originals/74/65/29/7465290119e3c6e757ab77ddcb9ef5dc.gif"]});
