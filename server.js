@@ -331,7 +331,7 @@ client.on('message', message => {
   // -- GIF --
 
   if (message.content.startsWith(prefix + "uraken")) {
-    message.channel.send("", {files: ["https://tenor.com/view/johnny-cadillac-uraken-ouraken-gif-13105925"]});
+    message.channel.send("https://tenor.com/view/johnny-cadillac-uraken-ouraken-gif-13105925");
   }
 
   if (message.content.startsWith(prefix + "sad")) {
