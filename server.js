@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
 const randomnum = require("unique-random");
 const fs = require("fs");
 const rand = randomnum(1, 6);
