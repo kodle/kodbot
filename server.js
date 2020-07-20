@@ -92,7 +92,7 @@ client.on('message', message => {
   const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
   const serverQueue = queue.get(message.guild.id);
 
-  let command = message.content.toLowerCase().split(' ')[0];
+  let commandx = message.content.toLowerCase().split(' ')[0];
   commandx = commandx.slice(prefix.length)
 
   // -- Help --
