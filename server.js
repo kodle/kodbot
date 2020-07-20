@@ -85,6 +85,16 @@ client.on('message', message => {
     message.reply('pong');
   }
 
+  if (message.author.bot) return undefined;
+  if (!message.content.startsWith(prefix)) return undefined;
+
+  const searchString = args.slice(1).join(' ');
+  const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
+  const serverQueue = queue.get(message.guild.id);
+
+let command = message.content.toLowerCase().split(' ')[0];
+command = command.slice(prefix.length)
+
   // -- Help --
 
   if (message.content.startsWith(prefix + "help")) {
