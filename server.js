@@ -32,6 +32,26 @@ client.on('ready', () => {
   console.log("DiscordJS version: " + Discord.version);
 
 });
+fs.readdir("./commands/", (err, files) => {
+
+  if(err) console.log(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+if(jsfile.length >= 1){
+  console.log(jsfile);
+  }
+
+  jsfile.forEach((f, i) =>{
+
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+
+    client.commands.set(props.help.name, props);
+  });
+});
 
 client.on('message', message => {
 
@@ -60,11 +80,7 @@ client.on('message', message => {
   // -- Commande de test --
 
   if (message.content === 'ping') {
-    message.reply('pong!');
-  }
-
-  if (message.content === 'boing') {
-    message.channel.send("", {files: ["https://cdn.discordapp.com/attachments/589895016231600158/733621543212548170/416640644937678848.gif"]});
+    message.reply('pong');
   }
 
   // -- Help --
@@ -79,7 +95,6 @@ client.on('message', message => {
       .addField("/sad", "Afficher votre tristesse")
       .addField("/nrv", "Afficher que vous êtes 13NRV")
       .addField("/dance", "Déhanchez-vous sur le dancefloor")
-      //.addField("bonjour", "Envoie un gif aléatoire de Bonjour")
       .addField("/cat", "Envoie une image aléatoire de chat")
       .addField("/dice", "Fait rouler un dé entre 1 et 6")
       .addField("/lenny", "( ͡° ͜ʖ ͡°)")
