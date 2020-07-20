@@ -85,15 +85,9 @@ client.on('message', message => {
     message.reply('pong');
   }
 
-  if (message.author.bot) return undefined;
-  if (!message.content.startsWith(prefix)) return undefined;
-
-  const searchString = args.slice(1).join(' ');
-  const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
-  const serverQueue = queue.get(message.guild.id);
-
-  let commandx = message.content.toLowerCase().split(' ')[0];
-  commandx = commandx.slice(prefix.length)
+  if (message.content === 'boing') {
+    message.channel.send("", {files: ["https://cdn.discordapp.com/attachments/589895016231600158/733621543212548170/416640644937678848.gif"]});
+  }
 
   // -- Help --
 
