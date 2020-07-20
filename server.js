@@ -49,6 +49,8 @@ if(jsfile.length >= 1){
 
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
+
+    client.commands.set(props.help.name, props);
   });
 });
 
