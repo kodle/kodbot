@@ -16,13 +16,13 @@ const token = process.env.TOKEN;
 // var giphy = require('giphy-api')(process.env.GIPHY);
 
 client.on('guildMemberAdd', member => {
-  member.guild.channels.cache.get('556815696399564802').send(`🥳 <@${member.user.id}>, bienvenue sur la Compagnie !`);
+  member.guild.channels.cache.get('556815696399564802').send(`🥳 <@${member.user.id}>, bienvenue sur la Citronnerie !`);
   member.roles.add(member.guild.roles.cache.find(r => r.name === "Membre"));
   console.log("nouveau membre");
 });
 
 client.on('guildMemberRemove', member => {
-    member.guild.channels.cache.get('556815696399564802').send(`😢 <@${member.user.id}>, a quitté la Compagnie :(`);
+    member.guild.channels.cache.get('556815696399564802').send(`😢 <@${member.user.id}>, a quitté la Citronnerie :(`);
 }); // id lunarly 589895016231600158 / id general 556815696399564802
 
 client.on('ready', () => {
