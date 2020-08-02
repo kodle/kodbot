@@ -17,7 +17,7 @@ const token = process.env.TOKEN;
 
 client.on('guildMemberAdd', member => {
   member.guild.channels.cache.get('556815696399564802').send(`🥳 <@${member.user.id}>, bienvenue sur la Citronnerie !`);
-  member.roles.add(member.guild.roles.cache.find(r => r.name === "Membre"));
+  member.roles.add(member.guild.roles.cache.find(r => r.name === "Gens Sympas"));
   console.log("nouveau membre");
 });
 
