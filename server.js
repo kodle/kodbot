@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
 const randomnum = require("unique-random");
+const fs = require("fs");
 const rand = randomnum(1, 6);
 
 
@@ -14,13 +16,22 @@ const token = process.env.TOKEN;
 // var giphy = require('giphy-api')(process.env.GIPHY);
 
 client.on('guildMemberAdd', member => {
+<<<<<<< HEAD
   member.guild.channels.cache.get('556815696399564802').send(`🥳 <@${member.user.id}>, bienvenue sur la Compagnie !`);
   member.roles.add(member.guild.roles.cache.find(r => r.name === "Gens Sympas"));
+=======
+  member.guild.channels.cache.get('556815696399564802').send(`🥳 <@${member.user.id}>, bienvenue sur la Citronnerie !`);
+  member.roles.add(member.guild.roles.cache.find(r => r.name === "Membre"));
+>>>>>>> a45a42c04173fc5eabbdaee56fe5fab816c8717b
   console.log("nouveau membre");
 });
 
 client.on('guildMemberRemove', member => {
+<<<<<<< HEAD
     member.guild.channels.cache.get('556815696399564802').send(`😢 <@${member.user.id}>, a quitté la Compagnie :(`);
+=======
+    member.guild.channels.cache.get('556815696399564802').send(`😢 <@${member.user.id}>, a quitté la Citronnerie :(`);
+>>>>>>> a45a42c04173fc5eabbdaee56fe5fab816c8717b
 }); // id lunarly 589895016231600158 / id general 556815696399564802
 
 client.on('ready', () => {
@@ -31,6 +42,26 @@ client.on('ready', () => {
   console.log("Node version: " + process.version);
   console.log("DiscordJS version: " + Discord.version);
 
+});
+fs.readdir("./commands/", (err, files) => {
+
+  if(err) console.log(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+if(jsfile.length >= 1){
+  console.log(jsfile);
+  }
+
+  jsfile.forEach((f, i) =>{
+
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+
+    client.commands.set(props.help.name, props);
+  });
 });
 
 client.on('message', message => {
@@ -60,7 +91,7 @@ client.on('message', message => {
   // -- Commande de test --
 
   if (message.content === 'ping') {
-    message.reply('pong!');
+    message.reply('pong');
   }
 
   if (message.content === 'boing') {
@@ -79,7 +110,6 @@ client.on('message', message => {
       .addField("/sad", "Afficher votre tristesse")
       .addField("/nrv", "Afficher que vous êtes 13NRV")
       .addField("/dance", "Déhanchez-vous sur le dancefloor")
-      //.addField("bonjour", "Envoie un gif aléatoire de Bonjour")
       .addField("/cat", "Envoie une image aléatoire de chat")
       .addField("/dice", "Fait rouler un dé entre 1 et 6")
       .addField("/lenny", "( ͡° ͜ʖ ͡°)")
